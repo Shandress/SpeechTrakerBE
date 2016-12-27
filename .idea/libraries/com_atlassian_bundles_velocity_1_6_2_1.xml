@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="com.atlassian.bundles:velocity:1.6.2-1" type="repository">
+    <properties maven-id="com.atlassian.bundles:velocity:1.6.2-1" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/velocity-1.6.2-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/velocity-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-lang-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/oro-2.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/velocity-1.6.2-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

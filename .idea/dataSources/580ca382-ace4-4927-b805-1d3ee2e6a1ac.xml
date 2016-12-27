@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - users@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="users">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="groups"/>
+    <table id="3" parent="1" name="user"/>
+    <table id="4" parent="1" name="usergroups"/>
+    <column id="5" parent="2" name="Id">
+      <mandatory>1</mandatory>
+      <data-type>INT(10)|4</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="6" parent="2" name="name">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(20)|12</data-type>
+    </column>
+    <key id="7" parent="2" name="PRIMARY">
+      <columns>Id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="8" parent="3" name="Id">
+      <mandatory>1</mandatory>
+      <data-type>INT(10)|4</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="9" parent="3" name="login">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(20)|12</data-type>
+    </column>
+    <column id="10" parent="3" name="fullName">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(20)|12</data-type>
+    </column>
+    <column id="11" parent="3" name="email">
+      <data-type>VARCHAR(40)|12</data-type>
+    </column>
+    <column id="12" parent="3" name="pass">
+      <mandatory>1</mandatory>
+      <data-type>INT(10)|4</data-type>
+    </column>
+    <index id="13" parent="3" name="unique_login">
+      <columns>login</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="14" parent="3" name="PRIMARY">
+      <columns>Id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="15" parent="4" name="Id">
+      <mandatory>1</mandatory>
+      <data-type>INT(10)|4</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="16" parent="4" name="userID">
+      <data-type>INT(10)|4</data-type>
+    </column>
+    <column id="17" parent="4" name="groupId">
+      <data-type>INT(10)|4</data-type>
+    </column>
+    <key id="18" parent="4" name="PRIMARY">
+      <columns>Id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Homepage</title>
+    </head>
+<body>
+#if(${loggedIn})
+<p align="right">You are logged in as ${login}. <br>
+<a alig href=${link}>Log out.</a>
+<form action="http://localhost:4567/viewTopics" method="post">
+    <input type="hidden" name="login" value=${login}>
+    <input type="submit" value="View topics">
+</form>
+<a href=${linkTopics}></a>
+</p>
+<p>Here is the list of your posts:</p>
+    #if (${userPosts.size()} == 0)
+    <p>None so far...</p>
+#end
+<ul>
+    #foreach(${post} in ${userPosts})
+        <li>***<br>
+            Subject: ${post.get("subject")} <br>
+            Date: ${post.get("date")} <br>
+            ${post.get("text")}
+        </li>
+#end
+</ul>
+#else
+<h3>Can't log in:<br></h3>
+<p>${msg}</p>
+#end
+
+</body>
+</html>

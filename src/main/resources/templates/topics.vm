@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Topics</title>
+</head>
+
+<body>
+<script>
+    function myToggleInput(expand, id) {
+        var div;
+        var form = document.getElementById('addComment' + id);
+        if(expand && !document.getElementById('commentInput')) {
+            div = document.createElement('div');
+            div.id = 'commentInput';
+            div.innerHTML = '<label>Enter comment:</label>\
+                <input type="text" name="content">\
+                <input type="submit" value="Confirm">\
+                <input type="button" value="Cancel" onclick="myToggleInput(false, id)">';
+                form.appendChild(div);
+        }
+        else {
+            div = document.getElementById('commentInput');
+            form.removeChild(div);
+        }
+    }
+    function toggleaddPostInput(expand) {
+        var div;
+        var form = document.getElementById('addPost');
+        if(expand && !document.getElementById('commentInputPost')) {
+            div = document.createElement('div');
+            div.id = 'commentInputPost';
+            div.innerHTML = '<label>Enter subject:</label>\
+                <input type="text" name="subject">\
+                <label>Enter content:</label>\
+                <input type="text" name="content">\
+                <input type="submit" value="Confirm">\
+                <input type="button" value="Cancel" onclick="toggleaddPostInput(false)">';
+            form.appendChild(div);
+        }
+        else {
+            div = document.getElementById('commentInputPost');
+            form.removeChild(div);
+        }
+    }
+
+</script>
+<p align="right">You are logged in as ${login}. <br>
+    <a alig href=${link}>Log out.</a>
+
+<p> Topics that are being discussed:</p>
+<form action="http://localhost:4567/addPost" method="post" id="addPost">
+    <input type="button" value="Write a post" onclick="toggleaddPostInput(true)">
+    <input type="hidden" name="login" value="${login}">
+</form>
+#if(${topics.size()} == 0)
+    <p>None so far...</p>
+    #else
+        <ul>
+    #foreach(${topic} in ${topics})
+        <li>
+            On: "${topic.get("subject")}"<br> By: "${topic.get("author")}".
+            <p>${topic.get("text")}</p>
+            <p>***</p>
+            #if(${topic.get("comments").size()} != 0)
+                <ul>
+                    #foreach(${comment} in ${topic.get("comments")})
+                    <li>
+                        By ${comment.get("author")}. <br> ${comment.get("date").toString()}
+                        ${comment.get("content")}
+                    </li>
+                    #end
+                </ul>
+                #end
+            <form action="http://localhost:4567/addComment" method="post" id="addComment${velocityCount}">
+                <input type="button" value="Add comment" onclick="myToggleInput(true, ${velocityCount})">
+                <input type="hidden" name="login" value="${login}">
+                <input type="hidden" name="subject" value="${topic.get("subject")}">
+            </form>
+        </li>
+    #end
+#end
+</body>
+</html>

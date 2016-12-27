@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.liferay:org.freemarker:2.3.23.LIFERAY-PATCHED-2" type="repository">
+    <properties maven-id="com.liferay:org.freemarker:2.3.23.LIFERAY-PATCHED-2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/org.freemarker-2.3.23.LIFERAY-PATCHED-2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp-api-2.3.2-b01.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/freemarker-2.3.23.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/org.freemarker-2.3.23.LIFERAY-PATCHED-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

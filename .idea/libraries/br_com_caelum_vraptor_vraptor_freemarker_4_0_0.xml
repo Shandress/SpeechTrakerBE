@@ -1,0 +1,36 @@
+<component name="libraryTable">
+  <library name="br.com.caelum.vraptor:vraptor-freemarker:4.0.0" type="repository">
+    <properties maven-id="br.com.caelum.vraptor:vraptor-freemarker:4.0.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/vraptor-freemarker-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/vraptor-4.0.0-beta-4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guava-15.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iogi-0.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/paranamer-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mirror-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist-3.18.1-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xstream-1.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xmlpull-1.1.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xpp3_min-1.1.4c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/invokebinder-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.annotation-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.interceptor-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.ejb-api-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.transaction-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gson-2.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cdi-api-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/el-api-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsr250-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/freemarker-2.3.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/servlet-api-3.0.20100224.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/vraptor-freemarker-4.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/vraptor-freemarker-4.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

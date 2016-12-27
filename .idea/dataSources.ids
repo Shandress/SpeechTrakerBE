@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - speechtrackerdb@localhost" uuid="580ca382-ace4-4927-b805-1d3ee2e6a1ac">
+    <database-info product="MySQL" version="5.7.16-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="speechtrackerdb"/>
+    <table name="comment" schema="" catalog="speechtrackerdb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="author" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="topic" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="comment_ibfk_1" columns="topic" ref-table="post" ref-schema="" ref-catalog="speechtrackerdb" ref-columns="subject" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="comment_ibfk_2" columns="author" ref-table="user" ref-schema="" ref-catalog="speechtrackerdb" ref-columns="login" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="post" schema="" catalog="speechtrackerdb" type="TABLE">
+      <column name="author" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="text" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="subject" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="subject"/>
+      <foreign-key name="post_ibfk_1" columns="author" ref-table="user" ref-schema="" ref-catalog="speechtrackerdb" ref-columns="login" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="comment_ibfk_1" table="comment" schema="" catalog="speechtrackerdb" columns="topic"/>
+    </table>
+    <table name="user" schema="" catalog="speechtrackerdb" type="TABLE">
+      <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="passHash" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="userGroup" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="login"/>
+      <foreign-key name="user_ibfk_1" columns="userGroup" ref-table="usergroup" ref-schema="" ref-catalog="speechtrackerdb" ref-columns="name" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="comment_ibfk_2" table="comment" schema="" catalog="speechtrackerdb" columns="author"/>
+      <exported-key name="post_ibfk_1" table="post" schema="" catalog="speechtrackerdb" columns="author"/>
+    </table>
+    <table name="usergroup" schema="" catalog="speechtrackerdb" type="TABLE">
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="isAdmin" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="pass" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="name"/>
+      <exported-key name="user_ibfk_1" table="user" schema="" catalog="speechtrackerdb" columns="userGroup"/>
+    </table>
+  </data-source>
+</component>

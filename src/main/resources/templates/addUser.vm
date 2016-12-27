@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Sugn up</title>
+</head>
+<body>
+#if (${userAdded})
+<h3>Greetings, ${name}</h3>
+<p>Congratulations! You have successfully registered in the system!<br>
+    Use your login (${login}) <a href="${link}">sign in</a>.</p>
+#else
+    <h3>Registration unsuccessfull!</h3>
+    <p>${msg}</p>
+#end
+</body>
+</html>
